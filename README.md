@@ -3,7 +3,7 @@
 A simple, interactive Rock, Paper, Scissors game built from scratch using frontend web development technologies. This project was created to practice DOM manipulation, event listeners, and basic JavaScript logic.
 
 ## 🚀 Live Demo
-You can play the game live here: [Link to your hosted project - e.g., GitHub Pages]
+You can play the game live here: https://vanshsomal.github.io/Rock-Paper-Scissors/
 
 ## 🎮 How to Play
 1. Click on one of the three buttons: **Rock**, **Paper**, or **Scissors**.
