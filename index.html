@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
     <title>ROCK-PAPER-SCISSORS</title>
+    <script src="script.js" defer></script>
 </head>
+
 <body class="bg-linear-to-r from-gray-900 via-gray-700 to-gray-900 min-h-screen">
     <h1 class="text-white font-bold text-5xl flex justify-center mt-18">ROCK PAPER SCISSORS</h1>
     <div class="text-white mt-18 flex justify-center space-x-20 items-center">
-        <button class="border-4 rounded-full w-36 h-36 flex flex-col justify-center items-center transition-all duration-200 hover:scale-110 active:scale-95"><img src="images/rock-icon.png" class="w-15 h-15"> Rock</button>
-        <button class="border-4 rounded-full w-36 h-36 flex flex-col justify-center items-center transition-all duration-200 hover:scale-110 active:scale-95"><img src="images/hand-icon.png" class="w-15 h-15">Paper</button>
-        <button class="border-4 rounded-full w-36 h-36 flex flex-col justify-center items-center transition-all duration-200 hover:scale-110 active:scale-95"><img src="images/scissors-icon.png" class="w-15 h-15">Scissors</button>
+        <button
+            class="border-4 rounded-full w-36 h-36 flex flex-col justify-center items-center transition-all duration-200 hover:scale-110 active:scale-95" onclick="playGame('Rock')"><img
+                src="images/rock-icon.png" class="w-15 h-15"> Rock</button>
+        <button
+            class="border-4 rounded-full w-36 h-36 flex flex-col justify-center items-center transition-all duration-200 hover:scale-110 active:scale-95" onclick="playGame('Paper')"><img
+                src="images/hand-icon.png" class="w-15 h-15" >Paper</button>
+        <button
+            class="border-4 rounded-full w-36 h-36 flex flex-col justify-center items-center transition-all duration-200 hover:scale-110 active:scale-95" onclick="playGame('Scissors')"><img
+                src="images/scissors-icon.png" class="w-15 h-15" >Scissors</button>
     </div>
-    <div></div>
+    <div class="flex flex-col justify-center items-center text-white">
+        <p class="js-result text-4xl font-black uppercase tracking-widest text-yellow-400 mb-4">Start The Game</p>
+        <div class="js-moves flex items-center justify-center gap-6 text-lg font-medium"></div>
+        <p class="js-score mt-8 bg-white/5 px-6 py-2 rounded-full border border-white/10"></p>
+        <p class="js-totalMatches mt-5"></p>
+    </div>
     <div class="flex justify-center text-white items-center">
-        <button class="border-3 py-3 px-5 rounded-4xl mt-5 transition-all duration-200 hover:scale-110 active:scale-95">Reset Score</button>
+        <button class="border-3 py-3 px-5 rounded-4xl mt-5 transition-all duration-200 hover:scale-110 active:scale-95"
+            onclick="
+    score.wins=0;
+    score.losses=0;
+    score.ties=0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    totalMatches();
+    document.querySelector('.js-moves').innerHTML='';
+    document.querySelector('.js-result').innerHTML='';
+    ">Reset Score</button>
     </div>
+
 </body>
+
 </html>
